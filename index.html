@@ -407,18 +407,19 @@
         <h1>Catur Realistis</h1>
         <p class="subtitle">Biru vs Hitam - Pilih mode permainan</p>
         <p class="subtitle">Disarankan tampilan mode dekstop</p>
-
+        <h1>Made by Rizky</h1>
         <div class="game-mode">
-          <button class="mode-btn active" id="pvp-btn">1 vs 1 Player</button>
+          <button class="mode-btn active" id="pvp-btn">Player vs Player</button>
           <button class="mode-btn" id="pvc-btn">1 Player vs CPU</button>
         </div>
 
         <div class="difficulty-selector" id="difficulty-container">
           <label for="difficulty">Tingkat Kesulitan CPU:</label>
           <select id="difficulty">
-            <option value="easy">Normal</option>
-            <option value="medium" selected>Medium</option>
+            <option value="easy" selected>Normal</option>
+            <option value="medium">Medium</option>
             <option value="hard">Hard</option>
+            <option value="extreme">Extreme</option>
           </select>
         </div>
       </header>
@@ -757,6 +758,10 @@
             case "hard":
               // Mini-max sederhana
               bestMove = getBestMoveMiniMax(possibleMoves, 2);
+              break;
+            case "extreme":
+              // Mini-max kompleks
+              bestMove = getBestMoveMiniMax(possibleMoves, 5);
               break;
           }
 
