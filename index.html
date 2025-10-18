@@ -419,7 +419,6 @@
             <option value="easy" selected>Normal</option>
             <option value="medium">Medium</option>
             <option value="hard">Hard</option>
-            <option value="extreme">Extreme</option>
           </select>
         </div>
       </header>
@@ -758,10 +757,6 @@
             case "hard":
               // Mini-max sederhana
               bestMove = getBestMoveMiniMax(possibleMoves, 2);
-              break;
-            case "extreme":
-              // Mini-max kompleks
-              bestMove = getBestMoveMiniMax(possibleMoves, 5);
               break;
           }
 
