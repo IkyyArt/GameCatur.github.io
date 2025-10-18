@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Catur Realistis - Biru vs Hitam + CPU</title>
+    <title>Catur Realistis - Putih vs Hitam + CPU</title>
     <style>
       * {
         margin: 0;
@@ -178,7 +178,7 @@
         left: -20px;
       }
 
-      /* STYLE BIDAK - BIRU DAN HITAM */
+      /* STYLE BIDAK - Putih DAN HITAM */
       .piece {
         font-size: 42px;
         font-weight: bold;
@@ -191,7 +191,7 @@
       }
 
       .piece-putih {
-        color: #3498db; /* BIRU */
+        color: #ffffff; /* Putih */
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
       }
 
@@ -405,7 +405,7 @@
     <div class="container">
       <header>
         <h1>Catur Realistis</h1>
-        <p class="subtitle">Biru vs Hitam - Pilih mode permainan</p>
+        <p class="subtitle">Putih vs Hitam - Pilih mode permainan</p>
         <p class="subtitle">Disarankan tampilan mode dekstop</p>
         <h1>Made by Rizky</h1>
         <div class="game-mode">
@@ -432,7 +432,7 @@
         <div class="info-panel">
           <div class="status">
             <div class="turn-indicator">
-              Giliran: <span id="turn">Biru</span>
+              Giliran: <span id="turn">Putih</span>
             </div>
             <div class="game-status" id="game-status">
               Permainan sedang berlangsung
@@ -441,7 +441,7 @@
 
           <div class="captured-pieces">
             <div class="captured-white">
-              <div class="captured-title">Biru Ditangkap:</div>
+              <div class="captured-title">Putih Ditangkap:</div>
               <div class="captured-container" id="captured-white"></div>
             </div>
             <div class="captured-black">
@@ -558,7 +558,7 @@
             board[1][i] = { type: PIECE_TYPES.PAWN, color: COLORS.BLACK };
           }
 
-          // Letakkan bidak putih (biru)
+          // Letakkan bidak putih (putih)
           board[7][0] = { type: PIECE_TYPES.ROOK, color: COLORS.WHITE };
           board[7][1] = { type: PIECE_TYPES.KNIGHT, color: COLORS.WHITE };
           board[7][2] = { type: PIECE_TYPES.BISHOP, color: COLORS.WHITE };
@@ -1488,13 +1488,13 @@
         function updateGameInfo() {
           // Perbarui giliran
           document.getElementById("turn").textContent =
-            gameState.currentPlayer === COLORS.WHITE ? "Biru" : "Hitam";
+            gameState.currentPlayer === COLORS.WHITE ? "putih" : "Hitam";
 
           // Perbarui status permainan
           let statusText = "Permainan sedang berlangsung";
           if (gameState.checkmate) {
             statusText = `Skakmat! ${
-              gameState.currentPlayer === COLORS.WHITE ? "Hitam" : "Biru"
+              gameState.currentPlayer === COLORS.WHITE ? "Hitam" : "putih"
             } menang!`;
           } else if (gameState.stalemate) {
             statusText = "Stalemate! Permainan seri.";
